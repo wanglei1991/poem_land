@@ -19,7 +19,6 @@ public class PoemSpider implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("暂停爬取！");
 		Spider.create(poemPageProcessor)
 			  .addUrl("https://so.gushiwen.cn/shiwen/default_4A222222222222A1.aspx")
 			  .addPipeline(poemService)
