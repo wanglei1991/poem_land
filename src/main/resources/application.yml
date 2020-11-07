@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://116.62.188.176:3306/mybatis_plus?useAffectedRows=true&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://127.0.0.1:3306/poem_land?useAffectedRows=true&useUnicode=true&characterEncoding=utf-8
     username: root
     password: 2573521862
   redis:
