@@ -51,7 +51,7 @@
 	  	<dependency>
 		    <groupId>us.codecraft</groupId>
 		    <artifactId>webmagic-core</artifactId>
-		    <version>0.7.3</version>
+		    <version>0.7.4</version>
 		    <!-- 排除掉webmagic自带的日志包，防止jar包冲突 -->
 		    <exclusions>
 		    	<exclusion>
@@ -64,7 +64,7 @@
 		<dependency>
 		    <groupId>us.codecraft</groupId>
 		    <artifactId>webmagic-extension</artifactId>
-		    <version>0.7.3</version>
+		    <version>0.7.4</version>
 		</dependency>
 		
 		<!-- redis -->

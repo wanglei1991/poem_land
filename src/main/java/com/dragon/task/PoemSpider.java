@@ -20,7 +20,8 @@ public class PoemSpider implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Spider.create(poemPageProcessor)
-			  .addUrl("https://so.gushiwen.cn/shiwen/default_4A222222222222A1.aspx")
+			  .addUrl("http://so.gushiwen.cn/shiwen/default_4A222222222222A1.aspx")
+//			  .addUrl("http://localhost/shiwen/default_4A222222222222A1.aspx")
 			  .addPipeline(poemService)
 			  .thread(2)
 			  .start();

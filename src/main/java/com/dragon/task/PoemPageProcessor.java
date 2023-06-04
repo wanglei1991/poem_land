@@ -30,28 +30,29 @@ public class PoemPageProcessor implements PageProcessor {
 		String html = page.getHtml().toString();
 		Document doc = Jsoup.parse(html);
 		
-		List<String> titleList = doc.select("body > div.main3 > div.left div.cont > p:nth-child(2)")
+		List<String> titleList = doc.select("body > div.main3 > div.left div.cont > div:last-child > p:first-child > a")
 								    .stream()
 								    .map(Element::text)         
 								    .collect(Collectors.toList());
 		
 		
-		List<String> eraList = doc.select("body > div.main3 > div.left  div.cont > p.source > a:nth-child(1)")
+		List<String> eraList = doc.select("body > div.main3 > div.left  div.cont > div:last-child > p.source > a:nth-child(2)")
 								  .stream()
 								  .map(Element::text)
 								  .collect(Collectors.toList());
 		
-		List<String> authorList = doc.select("body > div.main3 > div.left  div.cont > p.source > a:nth-child(3)")
+		List<String> authorList = doc.select("body > div.main3 > div.left  div.cont > div:last-child > p.source > a:nth-child(1)")
 									 .stream()
 									 .map(Element::text)
 									 .collect(Collectors.toList());
 		
-		List<String> contentList = doc.select("body > div.main3 > div.left  div.cont > div.contson")
+		List<String> contentList = doc.select("body > div.main3 > div.left  div.cont > div:last-child > div.contson")
 									  .stream()
 									  .map(Element::text)
 									  .collect(Collectors.toList());
 		
 		String nextUrl = page.getHtml().$("#FromPage > div > a.amore").links().get();
+//		nextUrl = nextUrl.replace("https://so.gushiwen.cn", "http://localhost");
 		
 		// 还是要加一个日志，才行，不然报错了看不到，它居然没处理！
 		int len = titleList.size();
